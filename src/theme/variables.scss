@@ -1,0 +1,182 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+
+/*
+ * DM Sans Font Family
+ * -------------------------------------------
+ */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DMSans-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+    --ion-color-primary: #01092d;
+    --ion-color-primary-rgb: 1, 9, 45;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #010828;
+    --ion-color-primary-tint: #1a2242;
+
+    --ion-color-secondary: #085FAF;
+    --ion-color-secondary-rgb: 8, 95, 175;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #07549a;
+    --ion-color-secondary-tint: #216fb7;
+
+    --ion-color-tertiary: #3f4244;
+    --ion-color-tertiary-rgb: 63, 66, 68;
+    --ion-color-tertiary-contrast: #ffffff;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: #373a3c;
+    --ion-color-tertiary-tint: #525557;
+
+    --ion-color-success: #28a745;
+    --ion-color-success-rgb: 40, 167, 69;
+    --ion-color-success-contrast: #ffffff;
+    --ion-color-success-contrast-rgb: 255, 255, 255;
+    --ion-color-success-shade: #23923d;
+    --ion-color-success-tint: #3eb158;
+
+    --ion-color-warning: #ffc107;
+    --ion-color-warning-rgb: 255, 193, 7;
+    --ion-color-warning-contrast: #000000;
+    --ion-color-warning-contrast-rgb: 0, 0, 0;
+    --ion-color-warning-shade: #e0a800;
+    --ion-color-warning-tint: #ffca2c;
+
+    --ion-color-danger: #DB2C00;
+    --ion-color-danger-rgb: 219, 44, 0;
+    --ion-color-danger-contrast: #ffffff;
+    --ion-color-danger-contrast-rgb: 255, 255, 255;
+    --ion-color-danger-shade: #c12700;
+    --ion-color-danger-tint: #df4119;
+
+    --ion-color-light: #FFFFFF;
+    --ion-color-light-rgb: 255, 255, 255;
+    --ion-color-light-contrast: #000000;
+    --ion-color-light-contrast-rgb: 0, 0, 0;
+    --ion-color-light-shade: #e0e0e0;
+    --ion-color-light-tint: #ffffff;
+
+    --ion-color-medium: #6c757d;
+    --ion-color-medium-rgb: 108, 117, 125;
+    --ion-color-medium-contrast: #ffffff;
+    --ion-color-medium-contrast-rgb: 255, 255, 255;
+    --ion-color-medium-shade: #5f676e;
+    --ion-color-medium-tint: #7b838a;
+
+    --ion-color-dark: #343a40;
+    --ion-color-dark-rgb: 52, 58, 64;
+    --ion-color-dark-contrast: #ffffff;
+    --ion-color-dark-contrast-rgb: 255, 255, 255;
+    --ion-color-dark-shade: #2e3338;
+    --ion-color-dark-tint: #474d53;
+
+    --ion-font-family: 'DM Sans', sans-serif;
+    
+    // DM Sans font weights
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+
+    --border-radius: .625rem;
+
+    --box-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+    --box-shadow-md: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+    --box-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+
+    // Ionic 8 specific improvements
+    --ion-backdrop-opacity: 0.32;
+    --ion-overlay-background-color: var(--ion-color-step-100, #ffffff);
+    --ion-toolbar-background: var(--ion-color-primary);
+    --ion-toolbar-color: var(--ion-color-primary-contrast);
+    
+    // Improved ripple effect
+    --ion-color-base: var(--ion-color-primary);
+    --ion-color-contrast: var(--ion-color-primary-contrast);
+    
+    // Enhanced button styles for Ionic 8
+    --ion-button-border-radius: var(--border-radius);
+    
+    // Better focus indicators for accessibility
+    --ion-focus-color: var(--ion-color-secondary);
+    
+    // Modern card styling
+    --ion-card-background: var(--ion-color-light);
+    --ion-card-border-radius: var(--border-radius);
+    --ion-card-box-shadow: var(--box-shadow-md);
+}
+
+/*
+ * DM Sans Font Utility Classes
+ * -------------------------------------------
+ */
+.font-light {
+  font-weight: var(--font-weight-light) !important;
+}
+
+.font-regular {
+  font-weight: var(--font-weight-regular) !important;
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold) !important;
+}
+
+.font-extra-bold {
+  font-weight: var(--font-weight-extra-bold) !important;
+}

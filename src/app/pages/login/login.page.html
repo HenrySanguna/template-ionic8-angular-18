@@ -1,0 +1,152 @@
+<ion-content
+  class="flex flex-col items-center justify-between min-h-full bg-white"
+>
+  <!-- Logo y bienvenida -->
+  <div class="flex flex-col items-center w-full pt-12 px-6">
+    <!-- Avatar/Logo -->
+    <div class="relative mb-6">
+      <div
+        class="w-32 h-32 bg-gray-200 rounded-lg flex items-center justify-center"
+      >
+        <svg
+          class="w-20 h-20 text-gray-400"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+          />
+          <polyline
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            points="9 22 9 12 15 12 15 22"
+          />
+        </svg>
+      </div>
+      <!-- Badge circular -->
+      <div
+        class="absolute -top-2 -right-2 w-12 h-12 bg-warning rounded-full flex items-center justify-center shadow-lg"
+      >
+        <span class="text-xl font-bold text-white">A</span>
+      </div>
+    </div>
+
+    <!-- Título Bienvenido -->
+    <h1 class="text-2xl font-bold text-dark mb-8">
+      {{ 'AUTH.WELCOME' | transloco }}
+    </h1>
+
+    <!-- Formulario -->
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="w-full max-w-md"
+    >
+      <!-- Campo Email -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-dark mb-2">
+          {{ 'AUTH.EMAIL' | transloco }}
+        </label>
+        <ion-input
+          formControlName="email"
+          type="email"
+          [placeholder]="'AUTH.EMAIL_PLACEHOLDER' | transloco"
+          fill="outline"
+          class="custom-input"
+          [class.ion-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          [class.ion-touched]="loginForm.get('email')?.touched"
+        ></ion-input>
+        @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched)
+        {
+        <div class="text-danger text-xs mt-1 px-2">
+          {{ getErrorMessage('email') }}
+        </div>
+        }
+      </div>
+
+      <!-- Campo Contraseña -->
+      <div class="mb-2">
+        <label class="block text-sm font-medium text-dark mb-2">
+          {{ 'AUTH.PASSWORD' | transloco }}
+        </label>
+        <div class="relative">
+          <ion-input
+            formControlName="password"
+            [type]="showPassword ? 'text' : 'password'"
+            [placeholder]="'AUTH.PASSWORD_PLACEHOLDER' | transloco"
+            fill="outline"
+            class="custom-input"
+            [class.ion-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+            [class.ion-touched]="loginForm.get('password')?.touched"
+          ></ion-input>
+          <ion-button
+            fill="clear"
+            class="absolute right-0 top-0 h-full"
+            (click)="togglePasswordVisibility()"
+            aria-label="Toggle password visibility"
+          >
+            <ion-icon
+              slot="icon-only"
+              [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+              class="text-medium"
+            ></ion-icon>
+          </ion-button>
+        </div>
+        @if (loginForm.get('password')?.invalid &&
+        loginForm.get('password')?.touched) {
+        <div class="text-danger text-xs mt-1 px-2">
+          {{ getErrorMessage('password') }}
+        </div>
+        }
+      </div>
+
+      <!-- Olvidaste tu contraseña -->
+      <div class="flex justify-end mb-4">
+        <button
+          type="button"
+          class="text-sm text-primary font-medium"
+          (click)="goToForgotPassword()"
+        >
+          {{ 'AUTH.FORGOT_PASSWORD' | transloco }}
+        </button>
+      </div>
+
+      <!-- Checkbox Mantener sesión -->
+      <div class="flex items-center mb-6">
+        <ion-checkbox formControlName="keepSession" class="mr-3"></ion-checkbox>
+        <label class="text-sm text-dark">
+          {{ 'AUTH.KEEP_SESSION' | transloco }}
+        </label>
+      </div>
+
+      <!-- Botón Iniciar sesión -->
+      <ion-button
+        type="submit"
+        expand="block"
+        class="login-button mb-4"
+        [disabled]="loginForm.invalid"
+      >
+        {{ 'AUTH.LOGIN' | transloco }}
+      </ion-button>
+
+      <!-- Texto de registro -->
+      <div class="text-center">
+        <span class="text-sm text-dark"
+          >{{ 'AUTH.NO_ACCOUNT' | transloco }}</span
+        >
+        <button
+          type="button"
+          class="text-sm text-primary font-medium ml-1"
+          (click)="goToRegister()"
+        >
+          {{ 'AUTH.REGISTER_LINK' | transloco }}
+        </button>
+      </div>
+    </form>
+  </div>
+</ion-content>

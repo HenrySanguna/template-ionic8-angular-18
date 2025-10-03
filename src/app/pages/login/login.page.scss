@@ -1,0 +1,45 @@
+ion-content {
+  --background: var(--ion-color-light);
+}
+
+.custom-input {
+  --background: white;
+  --border-radius: 0.5rem;
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --border-width: 1px;
+  --border-color: var(--ion-color-medium);
+  
+  &.ion-invalid.ion-touched {
+    --border-color: var(--ion-color-danger);
+  }
+}
+
+.login-button {
+  --background: var(--ion-color-medium);
+  --background-activated: var(--ion-color-medium-shade);
+  --border-radius: 0.5rem;
+  --padding-top: 0.875rem;
+  --padding-bottom: 0.875rem;
+  font-weight: 500;
+  text-transform: none;
+  
+  &::part(native) {
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+ion-checkbox {
+  --size: 20px;
+  --border-radius: 4px;
+}
+
+// Estilos para el botón de toggle password
+ion-button.absolute {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  margin: 0;
+  height: 100%;
+}

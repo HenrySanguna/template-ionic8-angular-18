@@ -1,0 +1,7 @@
+{
+  "name": "cz-cars",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
